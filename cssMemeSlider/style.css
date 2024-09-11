@@ -1,0 +1,112 @@
+
+.slider-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+  background-color: #494848;
+}
+
+.slider-items {
+  align-self: flex-start;
+  display: flex;
+  width: 400%;
+  transition: transform 1s ease-in-out;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 9px;
+}
+
+#slide1:checked ~ .slider-items {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slider-items {
+  transform: translateX(-25%);
+}
+
+#slide3:checked ~ .slider-items {
+  transform: translateX(-50%);
+}
+
+#slide4:checked ~ .slider-items {
+  transform: translateX(-75%);
+}
+
+#slide1:checked ~ .slider-bottom .slider-caption .caption-text:nth-child(1),
+#slide2:checked ~ .slider-bottom .slider-caption .caption-text:nth-child(2),
+#slide3:checked ~ .slider-bottom .slider-caption .caption-text:nth-child(3),
+#slide4:checked ~ .slider-bottom .slider-caption .caption-text:nth-child(4) {
+  opacity: 1;
+}
+
+.slider-bottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.slider-caption {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.caption-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.control {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .control {
+  background-color: #000;
+}
+
+.control:hover {
+  background-color: #888;
+  transform: scale(1.2);
+}
