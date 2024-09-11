@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
   max-width: 90vw;
   margin: 0 auto;
@@ -30,17 +30,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1.5rem;
   background-color: #ffffff;
-  border-radius: 9px;
+  border-radius: 0.6rem;
 }
 
 .item img {
   max-width: 100%;
   height: auto;
-  border-radius: 9px;
+  border-radius: 0.6rem;
 }
 
 #slide1:checked ~ .slider-items {
@@ -72,7 +72,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 
 .slider-caption {
@@ -83,8 +83,7 @@
 
 .caption-text {
   font-family: "Raleway", sans-serif;
-  font-size: 20x;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
   color: #ffffff;
   opacity: 0;
   transition: opacity 1s ease-in-out, visibility 0s linear 1s;
@@ -98,8 +97,8 @@
 }
 
 .control {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   background-color: #ccc;
   cursor: pointer;
