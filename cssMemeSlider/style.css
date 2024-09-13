@@ -83,7 +83,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .caption-wrapper {
@@ -120,8 +120,7 @@
   padding: 0.3rem;
 }
 
-.control-wrapper:hover {
-  background: #888;
+.control-wrapper:hover, .control:hover {
   transform: scale(1.2);
   cursor: pointer;
 }
@@ -139,12 +138,20 @@ input[type="radio"] {
   display: none;
 }
 
-input[type="radio"]#slide1:checked ~ .slider-bottom .slider-controls .control-wrapper1 label[for="slide1"],
-input[type="radio"]#slide2:checked ~ .slider-bottom .slider-controls .control-wrapper2 label[for="slide2"],
-input[type="radio"]#slide3:checked ~ .slider-bottom .slider-controls .control-wrapper3 label[for="slide3"],
-input[type="radio"]#slide4:checked ~ .slider-bottom .slider-controls .control-wrapper4 label[for="slide4"] {
-  background: radial-gradient(circle, transparent 40%, #656565 41%);
+input[type="radio"]#slide1:checked ~ .slider-bottom .slider-controls .control-wrapper1,
+input[type="radio"]#slide2:checked ~ .slider-bottom .slider-controls .control-wrapper2,
+input[type="radio"]#slide3:checked ~ .slider-bottom .slider-controls .control-wrapper3,
+input[type="radio"]#slide4:checked ~ .slider-bottom .slider-controls .control-wrapper4 {
   pointer-events: none;
+  cursor: default;
+}
+
+input[type="radio"]#slide1:checked ~ .slider-bottom .slider-controls .control-wrapper1 .control,
+input[type="radio"]#slide2:checked ~ .slider-bottom .slider-controls .control-wrapper2 .control,
+input[type="radio"]#slide3:checked ~ .slider-bottom .slider-controls .control-wrapper3 .control,
+input[type="radio"]#slide4:checked ~ .slider-bottom .slider-controls .control-wrapper4 .control {
+  background: radial-gradient(circle, transparent 40%, #656565 41%);
+  transform: none;
   cursor: default;
 }
 
@@ -153,11 +160,32 @@ input[type="radio"]#slide4:checked ~ .slider-bottom .slider-controls .control-wr
 }
 
 @media (max-width: 520px) {
+  .slider-body {
+    gap: 1rem;
+  }
+
+  .item {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+  }
+
   .slider-bottom {
     flex-direction: column-reverse;
+    margin-bottom: 1.5rem;
+  }
+
+  .caption-wrapper {
+    width: 50%;
   }
 
   .slider-controls {
-    margin-bottom: 1rem;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
   }
+
+  .control {
+    width: 1rem;
+    height: 1rem;
+}
 }
