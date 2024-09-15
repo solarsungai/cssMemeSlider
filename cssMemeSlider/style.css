@@ -1,0 +1,217 @@
+.slider-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+  background-color: #494848;
+  overflow: hidden;
+}
+
+.slider-items {
+  align-self: flex-start;
+  display: flex;
+  width: 600%;
+  transition: transform 0.7s ease-in-out;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1.5rem;
+  background-color: #040404;
+  border-radius: 0.5rem;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+#slide1:checked ~ .slider-items {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slider-items {
+  transform: translateX(-16.66%);
+}
+
+#slide3:checked ~ .slider-items {
+  transform: translateX(-33.33%);
+}
+
+#slide4:checked ~ .slider-items {
+  transform: translateX(-50%);
+}
+
+#slide5:checked ~ .slider-items {
+  transform: translateX(-66.66%);
+}
+
+#slide6:checked ~ .slider-items {
+  transform: translateX(-83.33%);
+}
+
+.slider-bottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.caption-wrapper {
+  width: 50%;
+  overflow: hidden;
+}
+
+.slider-caption {
+  width: 600%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#slide1:checked ~ .slider-bottom .slider-caption {
+  transform: translateX(0);
+  transition: transform 0.8s ease;
+}
+
+#slide2:checked ~ .slider-bottom .slider-caption {
+  transform: translateX(-16.66%);
+  transition: transform 0.8s ease;
+}
+
+#slide3:checked ~ .slider-bottom .slider-caption {
+  transform: translateX(-33.33%);
+  transition: transform 0.8s ease;
+}
+
+#slide4:checked ~ .slider-bottom .slider-caption {
+  transform: translateX(-50%);
+  transition: transform 0.8s ease;
+}
+
+#slide5:checked ~ .slider-bottom .slider-caption {
+  transform: translateX(-66.66%);
+  transition: transform 0.8s ease;
+}
+
+#slide6:checked ~ .slider-bottom .slider-caption {
+  transform: translateX(-83.33%);
+  transition: transform 0.8s ease;
+}
+
+.caption-item {
+  width: 25%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.caption-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.control-wrapper {
+  padding: 0.3rem;
+}
+
+.control-wrapper:hover, .control:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.control {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: radial-gradient(circle, transparent 40%, #ccc 41%);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]#slide1:checked ~ .slider-bottom .slider-controls .control-wrapper1,
+input[type="radio"]#slide2:checked ~ .slider-bottom .slider-controls .control-wrapper2,
+input[type="radio"]#slide3:checked ~ .slider-bottom .slider-controls .control-wrapper3,
+input[type="radio"]#slide4:checked ~ .slider-bottom .slider-controls .control-wrapper4,
+input[type="radio"]#slide5:checked ~ .slider-bottom .slider-controls .control-wrapper5,
+input[type="radio"]#slide6:checked ~ .slider-bottom .slider-controls .control-wrapper6 {
+  pointer-events: none;
+  cursor: default;
+}
+
+input[type="radio"]#slide1:checked ~ .slider-bottom .slider-controls .control-wrapper1 .control,
+input[type="radio"]#slide2:checked ~ .slider-bottom .slider-controls .control-wrapper2 .control,
+input[type="radio"]#slide3:checked ~ .slider-bottom .slider-controls .control-wrapper3 .control,
+input[type="radio"]#slide4:checked ~ .slider-bottom .slider-controls .control-wrapper4 .control,
+input[type="radio"]#slide5:checked ~ .slider-bottom .slider-controls .control-wrapper5 .control,
+input[type="radio"]#slide6:checked ~ .slider-bottom .slider-controls .control-wrapper6 .control {
+  background: radial-gradient(circle, transparent 40%, #656565 41%);
+  transform: none;
+  cursor: default;
+}
+
+.control:active {
+  background: radial-gradient(circle, transparent 40%, #888 41%);
+}
+
+@media (max-width: 650px) {
+  .slider-body {
+    gap: 1rem;
+  }
+
+  .item {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .slider-bottom {
+    flex-direction: column-reverse;
+    margin-bottom: 1.5rem;
+  }
+
+  .caption-wrapper {
+    width: 100%;
+    padding-bottom: 0.2rem;
+  }
+
+  .caption-text {
+    font-size: 1rem;
+  }
+
+  .slider-controls {
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .control {
+    width: 1rem;
+    height: 1rem;
+}
+}
